@@ -68,11 +68,11 @@ class CollectionController extends Controller
             // Wanted
             $e->wanted = (empty($c['wanted'])) ? 0 : $c['wanted'];
             $e->foil_wanted = (empty($c['foil_wanted'])) ? 0 : $c['foil_wanted'];
-	    if (($e->count == 0) && ($e->foil_count == 0) && ($e->trade_count == 0) && ($e->foil_trade_count == 0) && ($e->wanted == 0) && ($e->foil_wanted == 0)) {
-		$e->forceDelete();
-	    } else {
-            	$e->save();
-	    }
+            if (($e->count == 0) && ($e->foil_count == 0) && ($e->trade_count == 0) && ($e->foil_trade_count == 0) && ($e->wanted == 0) && ($e->foil_wanted == 0)) {
+                $e->forceDelete();
+            } else {
+                $e->save();
+            }
         }
 
         if (!$request->ajax()) {
